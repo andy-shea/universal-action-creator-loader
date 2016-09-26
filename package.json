@@ -4,7 +4,7 @@
   "author": "Andy Shea <aa.shea@gmail.com>",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/andy-shea/universal-action-creator-loader"
