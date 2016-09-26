@@ -1,0 +1,27 @@
+{
+  "name": "universal-action-creator-loader",
+  "description": "A Webpack loader to strip server side code from action creators in a client build",
+  "author": "Andy Shea <aa.shea@gmail.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andy-shea/universal-action-creator-loader"
+  },
+  "homepage": "https://github.com/andy-shea/universal-action-creator-loader",
+  "keywords": [
+    "react",
+    "redux",
+    "action",
+    "action-creator",
+    "webpack",
+    "universal",
+    "isomorphic",
+    "loader"
+  ],
+  "dependencies": {
+    "acorn": "^4.0.3",
+    "astring": "^0.7.1"
+  }
+}
