@@ -11,7 +11,7 @@ function findAsyncActionCreator(nodeType, node) {
 module.exports = function(source, map) {
   this.cacheable();
 
-  var ast = acorn.parse(source);
+  var ast = acorn.parse(source, {sourceType: 'module'});
   var foundAsyncAction = walk.findNodeAt(ast, null, null, findAsyncActionCreator);
   while (foundAsyncAction) {
     var parent = walk.findNodeAround(ast, foundAsyncAction.node.start, function(nodeType) {
