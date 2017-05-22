@@ -1,0 +1,9 @@
+import foo from 'bar';
+export const actions = {
+  createFoo: actionCreator(types.CREATE_FOO),
+  loadFoo: asyncActionCreator(types.LOAD_FOO, {
+    client: () => get('/api/foo'),
+    server: ({injector}) => injector.get(require('FooService')).loadFoo(),
+    schema: [Foo.normalizedSchema]
+  })
+};

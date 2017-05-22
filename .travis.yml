@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- 4.5
+sudo: false
+cache:
+  directories:
+  - node_modules
+after_success: npm run coverage
+deploy:
+  provider: npm
+  email: aa.shea@gmail.com
+  api_key:
+    secure: Pwpd471+3IkqnYomuRTcmmHLWXXGdT3brHGq9HaypA9nfYN7PThDP5hOARWPDBq4kQ+ecZSGPL8Hii3rmJ+UC8QqBK1FCtwR0UmKiyKMCPNMJbmxJUmPrg5cXicP9eYamN1/mMeoI0cGJPnoSXO+JMAFXVfYe21JUggFkf8knV9nucB1CJqAx0ovNldMzafqHHTqucYjZ3V6y5yr0jvoYvNW9i2QBfbF6Jiwj+kW+kyx7R5Pr3qwRNuBZoMgqYp6d5wpgECmtMKQdtz5j1bfdNqAz4Zm9nDuM8eWm7Eren9qnwalaHhhgtFx9ObcYyJTDT9o/iVDgJUZ2dfLuqKnn1olVau3mtt/Qwv/GChAXHqmUn+fUK2WVNZfYsZIiyLt89OUPvGfy37znQsTtTcbVCqw2MuwanV8h6oJ9HrhGSi9I8Rn4iIq7xSW3FatrU+4FwOg68PFpvvQEPc1rp+h+CzEjpHD0bTzPsdKlbjyOe2ijPoOSPxhJyKTGs91Z/yfahaxKplMnnlJQnU8yc/IzhkJTAqBIaRSY9ElJYEgVc8NE/N/AJWnez8Pvltb12FvDe8aFGV2Ry9cULWIkv5TLJNwZSfkzBAHaMVn5oJZVQPyQhth0EcbslVj1Qqg7dxYEy6yJWFkfA7rx2RAQlhD4eIGlP1TJOYIl0EWG/KL2l0=
+  on:
+    tags: true

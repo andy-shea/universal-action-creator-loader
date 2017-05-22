@@ -1,0 +1,12 @@
+import foo from 'bar';
+export const actions = {
+  createFoo: actionCreator(types.CREATE_FOO),
+  loadFoo: asyncActionCreator(types.LOAD_FOO, {
+    client: () => get('/api/foo'),
+    schema: [Foo.normalizedSchema],
+  }),
+  loadBar: asyncActionCreator(types.LOAD_BAR, {
+    client: () => get('/api/bar'),
+    schema: [Bar.normalizedSchema]
+  })
+};
