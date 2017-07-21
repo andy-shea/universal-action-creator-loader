@@ -25,3 +25,7 @@ test('strips single server property', t => {
 test('strips multiple server properties', t => {
   testLoader(t, 'source2', 'expected2', 'server properties are removed');
 });
+
+test('strips server property within function', t => {
+  testLoader(t, 'source4', 'expected4', 'server property is removed');
+});

@@ -1,0 +1,6 @@
+function createRoutesMap(helpers) {
+  return createAsyncRoute('ROUTES/STACK', '/:stack', {
+    client: () => get('/api/foo'),
+    schema: [Foo.normalizedSchema]
+  }, helpers);
+}
