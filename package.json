@@ -2,7 +2,7 @@
   "name": "universal-action-creator-loader",
   "description": "A Webpack loader to strip server side code from action creators in a client build",
   "author": "Andy Shea <aa.shea@gmail.com>",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "main": "index.js",
   "repository": {
