@@ -26,8 +26,8 @@
     "prepublish": "npm test"
   },
   "dependencies": {
-    "acorn": "^4.0.3",
-    "astring": "^0.7.1"
+    "acorn": "^5.1.1",
+    "astring": "^1.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -36,7 +36,7 @@
     "babel-register": "^6.24.1",
     "codecov": "^2.2.0",
     "cross-env": "^5.0.0",
-    "nyc": "^10.3.2",
+    "nyc": "^11.0.3",
     "tape": "^4.6.3"
   }
 }

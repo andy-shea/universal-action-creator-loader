@@ -9,7 +9,10 @@ function isObject(nodeType, node) {
 module.exports = function(source, map) {
   this.cacheable();
 
-  var ast = acorn.parse(source, {sourceType: 'module'});
+  var ast = acorn.parse(source, {
+    sourceType: 'module',
+    ecmaVersion: 8
+  });
   var object = walk.findNodeAt(ast, null, null, isObject);
   while (object) {
     var properties = object.node.properties;
@@ -21,5 +24,5 @@ module.exports = function(source, map) {
     object = walk.findNodeAfter(ast, object.node.end, isObject);
   }
 
-  this.callback(null, astring(ast, {indent: '  '}), map);
+  this.callback(null, astring.generate(ast, {indent: '  '}), map);
 };

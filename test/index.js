@@ -29,3 +29,7 @@ test('strips multiple server properties', t => {
 test('strips server property within function', t => {
   testLoader(t, 'source4', 'expected4', 'server property is removed');
 });
+
+test('handles async functions', t => {
+  testLoader(t, 'source5', 'expected4', 'server property is removed');
+});

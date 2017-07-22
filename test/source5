@@ -1,0 +1,7 @@
+function createRoutesMap(helpers) {
+  return createAsyncRoute('ROUTES/STACK', '/:stack', {
+    client: () => get('/api/foo'),
+    server: async ({injector}) => injector.get(require('FooService')).loadFoo(),
+    schema: [Foo.normalizedSchema]
+  }, helpers);
+}
