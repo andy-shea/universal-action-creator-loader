@@ -1,0 +1,9 @@
+const actions = {
+  loadFoo: {
+    client: true,
+    server: true
+  },
+  loadBar: {
+    server: true
+  }
+};

@@ -2,14 +2,14 @@ import test from 'tape';
 import fs from 'fs';
 import loader from '..';
 
-function loadSouce(filename) {
+function loadSource(filename) {
   return fs.readFileSync('./test/' + filename, 'utf8');
 }
 
 function testLoader(t, filename, expectedFilename, message) {
-  const source = loadSouce(filename);
+  const source = loadSource(filename);
   loader.call({cacheable: () => {}, callback: (err, modifiedSource) => {
-    t.equal(modifiedSource, loadSouce(expectedFilename), message);
+    t.equal(modifiedSource, loadSource(expectedFilename), message);
     t.end();
   }}, source);
 }
@@ -32,4 +32,8 @@ test('strips server property within function', t => {
 
 test('handles async functions', t => {
   testLoader(t, 'source5', 'expected4', 'server property is removed');
+});
+
+test('handles server as only property', t => {
+  testLoader(t, 'source6', 'expected6', 'server property is removed');
 });

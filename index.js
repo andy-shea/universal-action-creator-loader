@@ -3,7 +3,7 @@ var walk = require('acorn/dist/walk');
 var astring = require('astring');
 
 function isObject(nodeType, node) {
-  return nodeType === 'ObjectExpression';
+  return (nodeType === 'ObjectExpression' && node.properties.length);
 }
 
 module.exports = function(source, map) {
@@ -13,15 +13,16 @@ module.exports = function(source, map) {
     sourceType: 'module',
     ecmaVersion: 8
   });
-  var object = walk.findNodeAt(ast, null, null, isObject);
-  while (object) {
-    var properties = object.node.properties;
+
+  var found = walk.findNodeAfter(ast, 0, isObject);
+  while (found) {
+    var properties = found.node.properties;
     var serverIndex = properties.findIndex(function(property) {
       return property.key.name === 'server';
     });
     if (serverIndex !== -1) properties.splice(serverIndex, 1);
 
-    object = walk.findNodeAfter(ast, object.node.end, isObject);
+    found = walk.findNodeAfter(ast, properties.length ? properties[0].start : found.node.end, isObject);
   }
 
   this.callback(null, astring.generate(ast, {indent: '  '}), map);
