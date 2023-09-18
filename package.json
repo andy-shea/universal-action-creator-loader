@@ -26,7 +26,8 @@
     "prepublish": "npm test"
   },
   "dependencies": {
-    "acorn": "^5.1.1",
+    "acorn": "8.10.0",
+    "acorn-walk": "^8.2.0",
     "astring": "^1.0.3"
   },
   "devDependencies": {
