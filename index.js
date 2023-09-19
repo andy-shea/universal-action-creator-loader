@@ -18,7 +18,7 @@ module.exports = function (source, map) {
   while (found) {
     var properties = found.node.properties;
     var serverIndex = properties.findIndex(function (property) {
-      return property.key.name === "server";
+      return property.key && property.key.name === "server";
     });
     if (serverIndex !== -1) properties.splice(serverIndex, 1);
 
