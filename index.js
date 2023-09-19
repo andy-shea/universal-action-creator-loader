@@ -11,7 +11,7 @@ module.exports = function (source, map) {
 
   var ast = acorn.parse(source, {
     sourceType: "module",
-    ecmaVersion: 8,
+    ecmaVersion: 14,
   });
 
   var found = walk.findNodeAfter(ast, 0, isObject);
